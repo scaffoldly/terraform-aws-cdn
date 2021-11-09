@@ -6,4 +6,6 @@ terraform {
       source = "hashicorp/aws"
     }
   }
+
+  experiments = [module_variable_optional_attrs]
 }
