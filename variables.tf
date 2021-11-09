@@ -13,7 +13,7 @@ variable "logs_bucket_name" {
   description = "The bucket for logs"
 }
 
-variable "stages" {
+variable "cdn_stages" {
   type = map(
     object({
       domains         = optional(list(string))
