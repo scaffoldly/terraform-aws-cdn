@@ -50,6 +50,7 @@ No resources.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_bucket_name"></a> [bucket\_name](#output\_bucket\_name) | The bucket for deployments |
 | <a name="output_deployer_credentials"></a> [deployer\_credentials](#output\_deployer\_credentials) | The Access Key and Secret Key for CDN deployments for this repository |
 | <a name="output_repository_name"></a> [repository\_name](#output\_repository\_name) | Re-output of var.repository\_name |
 | <a name="output_service_slug"></a> [service\_slug](#output\_service\_slug) | Re-output of var.service\_slug |
