@@ -30,7 +30,7 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_aws_bucket"></a> [aws\_bucket](#module\_aws\_bucket) | scaffoldly/s3-private-versioned/aws | 1.0.0 |
-| <a name="module_aws_cdn"></a> [aws\_cdn](#module\_aws\_cdn) | scaffoldly/cdn-stage/aws | 1.0.6 |
+| <a name="module_aws_cdn"></a> [aws\_cdn](#module\_aws\_cdn) | scaffoldly/cdn-stage/aws | 1.0.7 |
 | <a name="module_aws_iam"></a> [aws\_iam](#module\_aws\_iam) | scaffoldly/cdn-iam/aws | 1.0.3 |
 
 ## Resources
