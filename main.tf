@@ -34,4 +34,8 @@ module "aws_cdn" {
   cloudfront_access_identity_path = module.aws_iam.cloudfront_access_identity_path
   certificate_arn                 = each.value.certificate_arn != null ? each.value.certificate_arn : ""
   domains                         = each.value.domains != null ? each.value.domains : []
+
+  providers = {
+    aws.dns = aws.dns
+  }
 }

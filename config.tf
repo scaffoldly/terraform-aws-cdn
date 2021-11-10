@@ -3,9 +3,14 @@ terraform {
 
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source                = "hashicorp/aws"
+      configuration_aliases = [aws.dns]
     }
   }
 
   experiments = [module_variable_optional_attrs]
+}
+
+provider "aws" {
+  alias = "dns"
 }
