@@ -30,7 +30,7 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_aws_bucket"></a> [aws\_bucket](#module\_aws\_bucket) | scaffoldly/s3-private-versioned/aws | 1.0.0 |
-| <a name="module_aws_cdn"></a> [aws\_cdn](#module\_aws\_cdn) | scaffoldly/cdn-stage/aws | 1.0.2 |
+| <a name="module_aws_cdn"></a> [aws\_cdn](#module\_aws\_cdn) | scaffoldly/cdn-stage/aws | 1.0.3 |
 | <a name="module_aws_iam"></a> [aws\_iam](#module\_aws\_iam) | scaffoldly/cdn-iam/aws | 1.0.3 |
 
 ## Resources
@@ -41,10 +41,10 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_cdn_stages"></a> [cdn\_stages](#input\_cdn\_stages) | Stage configuration, keyed by stage name | <pre>map(<br>    object({<br>      domains         = optional(list(string))<br>      certificate_arn = optional(string)<br>    })<br>  )</pre> | n/a | yes |
 | <a name="input_logs_bucket_name"></a> [logs\_bucket\_name](#input\_logs\_bucket\_name) | The bucket for logs | `string` | n/a | yes |
 | <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | The repository name | `string` | n/a | yes |
-| <a name="input_service_name"></a> [service\_name](#input\_service\_name) | The service name | `string` | n/a | yes |
-| <a name="input_stages"></a> [stages](#input\_stages) | Stage configuration, keyed by stage name | <pre>map(<br>    object({<br>      domains         = optional(list(string))<br>      certificate_arn = optional(string)<br>    })<br>  )</pre> | n/a | yes |
+| <a name="input_service_slug"></a> [service\_slug](#input\_service\_slug) | The service slug | `string` | n/a | yes |
 
 ## Outputs
 
@@ -52,6 +52,6 @@ No resources.
 |------|-------------|
 | <a name="output_deployer_credentials"></a> [deployer\_credentials](#output\_deployer\_credentials) | The Access Key and Secret Key for CDN deployments for this repository |
 | <a name="output_repository_name"></a> [repository\_name](#output\_repository\_name) | Re-output of var.repository\_name |
-| <a name="output_service_name"></a> [service\_name](#output\_service\_name) | Re-output of var.service\_name |
+| <a name="output_service_slug"></a> [service\_slug](#output\_service\_slug) | Re-output of var.service\_slug |
 | <a name="output_stage_config"></a> [stage\_config](#output\_stage\_config) | A map of CDN stages, keyed by stage |
 <!-- END_TF_DOCS -->
