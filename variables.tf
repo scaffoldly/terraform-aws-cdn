@@ -1,6 +1,6 @@
-variable "service_name" {
+variable "service_slug" {
   type        = string
-  description = "The service name"
+  description = "The service slug"
 }
 
 variable "repository_name" {

@@ -1,6 +1,6 @@
-output "service_name" {
-  value       = var.service_name
-  description = "Re-output of var.service_name"
+output "service_slug" {
+  value       = var.service_slug
+  description = "Re-output of var.service_slug"
 }
 
 output "repository_name" {
@@ -13,8 +13,8 @@ output "stage_config" {
     for cdn in module.aws_cdn :
     cdn.stage => {
       distribution_id = cdn.distribution_id
+      service_slug    = cdn.service_slug
       service_name    = cdn.service_name
-      repository_name = cdn.repository_name
       domain          = cdn.domain
       origins         = cdn.origins
     }

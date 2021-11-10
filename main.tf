@@ -22,11 +22,11 @@ module "aws_bucket" {
 
 module "aws_cdn" {
   source  = "scaffoldly/cdn-stage/aws"
-  version = "1.0.2"
+  version = "1.0.3"
 
   for_each = var.stages
 
-  service_name                    = var.service_name
+  service_slug                    = var.service_slug
   repository_name                 = var.repository_name
   bucket_name                     = module.aws_bucket.bucket_name
   logs_bucket_name                = var.logs_bucket_name
