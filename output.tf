@@ -8,6 +8,11 @@ output "repository_name" {
   description = "Re-output of var.repository_name"
 }
 
+output "bucket_name" {
+  value       = module.aws_bucket.bucket_name
+  description = "The bucket for deployments"
+}
+
 output "stage_config" {
   value = {
     for cdn in module.aws_cdn :
