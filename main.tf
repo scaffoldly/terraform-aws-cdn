@@ -22,7 +22,7 @@ module "aws_bucket" {
 
 module "aws_cdn" {
   source  = "scaffoldly/cdn-stage/aws"
-  version = "1.0.8"
+  version = "1.0.10"
 
   for_each = var.cdn_stages
 
@@ -33,7 +33,11 @@ module "aws_cdn" {
   stage                           = each.key
   cloudfront_access_identity_path = module.aws_iam.cloudfront_access_identity_path
   certificate_arn                 = each.value.certificate_arn != null ? each.value.certificate_arn : ""
-  domains                         = each.value.domains != null ? each.value.domains : []
+  root_domain                     = var.root_domain
+
+  # Logic info: if cdn_stages has domains, allow the custom domains, otherwise, will use the default CF domain (empty list)
+  # TODO: possibly use setintersection() to ensure that var.domains is in each.value.domains
+  domains = each.value.domains != null ? var.domains : []
 
   providers = {
     aws.dns = aws.dns

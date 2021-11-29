@@ -13,6 +13,17 @@ variable "logs_bucket_name" {
   description = "The bucket for logs"
 }
 
+variable "root_domain" {
+  type        = string
+  description = "The root domain"
+}
+
+variable "domains" {
+  type        = list(string)
+  description = "The domains for this CDN"
+  default     = []
+}
+
 variable "cdn_stages" {
   type = map(
     object({
