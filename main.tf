@@ -35,7 +35,7 @@ module "aws_cdn" {
   certificate_arn                 = each.value.certificate_arn != null ? each.value.certificate_arn : ""
   root_domain                     = each.value.root_domain
   subdomain                       = var.subdomain
-  subdomain_suffix                = each.value.subdomain_suffix
+  subdomain_suffix                = each.value.subdomain_suffix != null ? each.value.subdomain_suffix : ""
 
   providers = {
     aws.dns = aws.dns
