@@ -18,17 +18,18 @@ variable "root_domain" {
   description = "The root domain"
 }
 
-variable "domains" {
-  type        = list(string)
-  description = "The domains for this CDN"
-  default     = []
+variable "subdomain" {
+  type        = string
+  description = "The subdomain for the cdn"
+  default     = ""
 }
 
 variable "cdn_stages" {
   type = map(
     object({
-      domains         = optional(list(string))
-      certificate_arn = optional(string)
+      domains          = optional(list(string))
+      subdomain_suffix = optional(string)
+      certificate_arn  = optional(string)
     })
   )
   description = "Stage configuration, keyed by stage name"
