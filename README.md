@@ -41,7 +41,7 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cdn_stages"></a> [cdn\_stages](#input\_cdn\_stages) | Stage configuration, keyed by stage name | <pre>map(<br>    object({<br>      root_domain      = string<br>      domains          = optional(list(string))<br>      subdomain_suffix = optional(string)<br>      certificate_arn  = optional(string)<br>    })<br>  )</pre> | n/a | yes |
+| <a name="input_cdn_stages"></a> [cdn\_stages](#input\_cdn\_stages) | Stage configuration, keyed by stage name | <pre>map(<br>    object({<br>      root_domain      = optional(string)<br>      domains          = optional(list(string))<br>      subdomain_suffix = optional(string)<br>      certificate_arn  = optional(string)<br>    })<br>  )</pre> | n/a | yes |
 | <a name="input_logs_bucket_name"></a> [logs\_bucket\_name](#input\_logs\_bucket\_name) | The bucket for logs | `string` | n/a | yes |
 | <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | The repository name | `string` | n/a | yes |
 | <a name="input_service_slug"></a> [service\_slug](#input\_service\_slug) | The service slug | `string` | n/a | yes |
