@@ -22,7 +22,7 @@ variable "subdomain" {
 variable "cdn_stages" {
   type = map(
     object({
-      root_domain      = string
+      root_domain      = optional(string)
       domains          = optional(list(string))
       subdomain_suffix = optional(string)
       certificate_arn  = optional(string)

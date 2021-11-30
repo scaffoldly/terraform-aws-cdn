@@ -33,7 +33,7 @@ module "aws_cdn" {
   stage                           = each.key
   cloudfront_access_identity_path = module.aws_iam.cloudfront_access_identity_path
   certificate_arn                 = each.value.certificate_arn != null ? each.value.certificate_arn : ""
-  root_domain                     = each.value.root_domain
+  root_domain                     = each.value.root_domain != null ? each.value.root_domain : "unknown-domain"
   subdomain                       = var.subdomain
   subdomain_suffix                = each.value.subdomain_suffix != null ? each.value.subdomain_suffix : ""
 
