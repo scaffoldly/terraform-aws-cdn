@@ -22,7 +22,7 @@ module "aws_bucket" {
 
 module "aws_cdn" {
   source  = "scaffoldly/cdn-stage/aws"
-  version = "1.0.15"
+  version = "1.0.18"
 
   for_each = var.cdn_stages
 
@@ -37,6 +37,8 @@ module "aws_cdn" {
   subdomain                       = var.subdomain
   subdomain_suffix                = each.value.subdomain_suffix != null ? each.value.subdomain_suffix : ""
   cdn_domains                     = each.value.domains != null ? each.value.domains : []
+  disable_cache_patterns          = var.disable_cache_patterns
+  function_associations           = lookup(var.function_associations, each.key, {})
 
   providers = {
     aws.dns = aws.dns

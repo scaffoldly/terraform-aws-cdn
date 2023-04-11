@@ -30,3 +30,19 @@ variable "cdn_stages" {
   )
   description = "Stage configuration, keyed by stage name"
 }
+
+variable "disable_cache_patterns" {
+  type    = list(string)
+  default = []
+}
+
+variable "function_associations" {
+  type = map(
+    map(
+      object({
+        function_arn = string
+      })
+    )
+  )
+  description = "Lambda@Edge function associations, keyed by stage name"
+}
