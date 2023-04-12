@@ -45,4 +45,5 @@ variable "function_associations" {
     )
   )
   description = "Lambda@Edge function associations, keyed by stage name"
+  default = {}
 }
