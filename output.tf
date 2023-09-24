@@ -29,8 +29,9 @@ output "stage_config" {
 
 output "deployer_credentials" {
   value = {
-    access_key = module.aws_iam.deployer_access_key
-    secret_key = module.aws_iam.deployer_secret_key
+    access_key       = module.aws_iam.deployer_access_key
+    secret_key       = module.aws_iam.deployer_secret_key
+    lambda_edge_role = module.aws_iam.lambda_edge_role_arn
   }
   sensitive   = true
   description = "The Access Key and Secret Key for CDN deployments for this repository"
