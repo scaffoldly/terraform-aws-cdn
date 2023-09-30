@@ -1,6 +1,6 @@
 module "aws_iam" {
   source  = "scaffoldly/cdn-iam/aws"
-  version = "1.0.6"
+  version = "1.0.7"
 
   repository_name = var.repository_name
 }
