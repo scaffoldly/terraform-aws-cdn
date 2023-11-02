@@ -30,7 +30,7 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_aws_bucket"></a> [aws\_bucket](#module\_aws\_bucket) | scaffoldly/s3-private-versioned/aws | 1.0.1 |
-| <a name="module_aws_cdn"></a> [aws\_cdn](#module\_aws\_cdn) | scaffoldly/cdn-stage/aws | 1.0.24 |
+| <a name="module_aws_cdn"></a> [aws\_cdn](#module\_aws\_cdn) | scaffoldly/cdn-stage/aws | 1.0.26 |
 | <a name="module_aws_iam"></a> [aws\_iam](#module\_aws\_iam) | scaffoldly/cdn-iam/aws | 1.0.7 |
 
 ## Resources
@@ -41,6 +41,7 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_additional_subdomains"></a> [additional\_subdomains](#input\_additional\_subdomains) | The additional subdomains for the cdn | `list(string)` | `[]` | no |
 | <a name="input_cdn_stages"></a> [cdn\_stages](#input\_cdn\_stages) | Stage configuration, keyed by stage name | <pre>map(<br>    object({<br>      root_domain      = optional(string)<br>      domains          = optional(list(string))<br>      subdomain_suffix = optional(string)<br>      certificate_arn  = optional(string)<br>    })<br>  )</pre> | n/a | yes |
 | <a name="input_disable_cache_patterns"></a> [disable\_cache\_patterns](#input\_disable\_cache\_patterns) | n/a | `list(string)` | `[]` | no |
 | <a name="input_function_associations"></a> [function\_associations](#input\_function\_associations) | Lambda@Edge function associations, keyed by stage name | <pre>map(<br>    map(<br>      object({<br>        function_arn = string<br>      })<br>    )<br>  )</pre> | `{}` | no |
