@@ -22,7 +22,7 @@ module "aws_bucket" {
 
 module "aws_cdn" {
   source  = "scaffoldly/cdn-stage/aws"
-  version = "1.0.26"
+  version = "1.0.27"
 
   for_each = var.cdn_stages
 
