@@ -22,7 +22,7 @@ module "aws_bucket" {
 
 module "aws_cdn" {
   source  = "scaffoldly/cdn-stage/aws"
-  version = "1.0.24"
+  version = "1.0.26"
 
   for_each = var.cdn_stages
 
@@ -35,6 +35,7 @@ module "aws_cdn" {
   certificate_arn                 = each.value.certificate_arn != null ? each.value.certificate_arn : ""
   root_domain                     = each.value.root_domain != null ? each.value.root_domain : "unknown-domain"
   subdomain                       = var.subdomain
+  additional_subdomains           = var.additional_subdomains
   subdomain_suffix                = each.value.subdomain_suffix != null ? each.value.subdomain_suffix : ""
   cdn_domains                     = each.value.domains != null ? each.value.domains : []
   disable_cache_patterns          = var.disable_cache_patterns

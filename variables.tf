@@ -19,6 +19,12 @@ variable "subdomain" {
   default     = ""
 }
 
+variable "additional_subdomains" {
+  type        = list(string)
+  description = "The additional subdomains for the cdn"
+  default     = []
+}
+
 variable "cdn_stages" {
   type = map(
     object({
